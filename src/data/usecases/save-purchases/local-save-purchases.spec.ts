@@ -1,7 +1,7 @@
 import { CacheStore } from "@/data/protocols/cache"
 import { LocalSavePurchases } from "@/data/usecases/save-purchases/local-save-purchases"
 import { SavePurchases } from "@/domain/usecases"
-class CacheStoreSpy implements CacheStore{
+class CacheStoreSpy implements CacheStore {
     deleteCallsCount = 0
     insertCallsCount = 0
     deleteKey: string
@@ -12,6 +12,7 @@ class CacheStoreSpy implements CacheStore{
         this.deleteCallsCount++
         this.deleteKey = key
     }
+    
     insert(key: string, value: any): void {
         this.insertCallsCount++
         this.insertKey = key
